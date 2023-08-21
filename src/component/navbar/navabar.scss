@@ -1,0 +1,60 @@
+@import "../variables/variables.scss";
+
+
+.navbar {
+    padding: 20px 0 !important;
+    .navbar-brand {
+        font-size: 25px;
+        font-weight: bold;
+        color: $color_dark;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        margin-bottom: 2px
+    }
+    .navbar-collapse {
+        justify-content: end;
+        .navbar-nav {
+            gap: 4rem;
+            .nav-link{
+                text-transform: uppercase;
+                text-decoration: none;
+                font-size: 14px;
+                font-weight: bold;
+                color: black;
+                position: relative;
+                padding: 0 0 7px;
+                &::after {
+                    background: none repeat scroll 0 0 transparent;
+                    bottom: 0;
+                    content: "";
+                    display: block;
+                    height: 2px;
+                    left: 50%;
+                    position: absolute;
+                    background: $color_dark_orange;
+                    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+                    width: 0;
+                }
+                &:hover {
+                    color: $color_dark_orange;
+                    &::after{
+                        width: 100%;
+                        left: 0; 
+                    }
+                 
+                }
+                &.active {
+                    color: $color_dark_orange;
+                    &::after{
+                        width: 100%;
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
